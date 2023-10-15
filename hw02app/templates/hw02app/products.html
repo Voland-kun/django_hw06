@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Список продуктов
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'create_product' %}">Добавить продукт</a>
+    <h1>Список продуктов</h1>
+    <div style="column-count: 3; column-gap: 20px;">
+        <ul style="list-style-type: none; padding: 0; margin: 0;">
+            {% for product in products %}
+                <li style="margin-bottom: 20px;">
+                    <a href="{% url 'product_page' product.id %}">
+                        {% if product.photo %}
+                            <img src="{{ product.photo.url }}" alt="{{ product.name }} Photo" height="100">
+                        {% endif %}
+                        <h3>{{ product.name }}</h3>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список продуктов</title>
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Тайтол{% endblock %}</title>
+</head>
+<body>
+    <a href="{% url 'index'%}">Домой</a>
+    <a href="{% url 'products'%}">Список товаров</a>
+    {% block content %}
+        <p>Контент</p>
+    {% endblock %}
+</body>
+</html>
